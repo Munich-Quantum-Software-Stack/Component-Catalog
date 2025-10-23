@@ -28,11 +28,19 @@ jobs:
       - name: 'Create Branch, Commit, and Push'
         run: |
           NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
-          MAINTAINER="${{ steps.issue-parser.outputs.issueparser_maintainer }}"
+          MAINTAINERS="${{ steps.issue-parser.outputs.issueparser_maintainers }}"
+          DOCS="${{ steps.issue-parser.outputs.issueparser_docs }}"
+          GITHUB_REPO="${{ steps.issue-parser.outputs.issueparser_github }}"
           DESCRIPTION="${{ steps.issue-parser.outputs.issueparser_description }}"
+          LANGUAGES="${{ steps.issue-parser.outputs.issueparser_languages }}"
+          FRAMEWORKS="${{ steps.issue-parser.outputs.issueparser_frameworks }}"
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
           BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
+
+          LANG_ARRAY=$(echo "$LANGUAGES" | sed 's/[^,]\+/\"&\"/g' | sed 's/, /", "/g' | sed 's/.*/[&]/')
+          FW_ARRAY=$(echo "$FRAMEWORKS" | sed 's/[^,]\+/\"&\"/g' | sed 's/, /", "/g' | sed 's/.*/[&]/')
+          MAINT_ARRAY=$(echo "$MAINTAINERS" | sed 's/[^,]\+/\"&\"/g' | sed 's/, /", "/g' | sed 's/.*/[&]/')
 
           AUTHOR_NAME="${{ github.event.issue.user.login }}"
           AUTHOR_EMAIL="${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com"
@@ -43,12 +51,30 @@ jobs:
 
           # Create branch, add file, commit, and push
           git checkout -b $BRANCH_NAME
-          echo -e "# ${NAME}" > "components/${SANITIZED_NAME}.md"
-          echo -e "" >> "components/${SANITIZED_NAME}.md"
-          echo -e "_Maintainer: ${MAINTAINER}_" >> "components/${SANITIZED_NAME}.md"
-          echo -e "" >> "components/${SANITIZED_NAME}.md"
-          echo -e "${DESCRIPTION}" >> "components/${SANITIZED_NAME}.md"
-          git add "components/${SANITIZED_NAME}.md"
+          echo -e "---" > "_components/${SANITIZED_NAME}.md"
+          echo -e "title: \"${NAME}\"" >> "_components/${SANITIZED_NAME}.md"
+          
+          echo -e "languages: $LANG_ARRAY" >> "_components/${SANITIZED_NAME}.md"
+          echo -e "frameworks: $FW_ARRAY" >> "_components/${SANITIZED_NAME}.md"
+
+          if [ -n "$DOCS" ] || [ -n "$GITHUB_REPO" ]; then
+            echo -e "links:" >> "_components/${SANITIZED_NAME}.md"
+            if [ -n "$DOCS" ]; then
+              echo -e "  docs: \"${DOCS}\"" >> "_components/${SANITIZED_NAME}.md"
+            fi
+            if [ -n "$GITHUB_REPO" ]; then
+              echo -e "  github: \"${GITHUB_REPO}\"" >> "_components/${SANITIZED_NAME}.md"
+            fi
+          fi
+
+          echo -e "maintainers: $MAINT_ARRAY" >> "_components/${SANITIZED_NAME}.md"
+          
+          echo -e "---" >> "_components/${SANITIZED_NAME}.md"
+          echo -e "" >> "_components/${SANITIZED_NAME}.md"
+          echo -e "${DESCRIPTION}" >> "_components/${SANITIZED_NAME}.md"
+
+          git add "_components/${SANITIZED_NAME}.md"
+          
           git -c "author.name=${AUTHOR_NAME}" -c "author.email=${AUTHOR_EMAIL}" \
             commit -m "feat: :card_file_box: add component \"${NAME}\" from Issue #${ISSUE_NUMBER}"
           git push origin $BRANCH_NAME

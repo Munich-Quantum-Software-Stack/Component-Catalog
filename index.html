@@ -1,0 +1,50 @@
+---
+layout: default
+title: Component Overview
+---
+
+<h1>MQSS Components</h1>
+
+<div class="component-grid">
+  {% for component in site.components %}
+    <div class="component-box">
+
+      <div class="component-header">
+        <h2>{{ component.title }}</h2>
+        <div class="component-links">
+          {% if component.links.docs %}
+            <a href="{{ component.links.docs }}" title="Documentation">Docs</a>
+          {% endif %}
+          {% if component.links.github %}
+            <a href="{{ component.links.github }}" title="GitHub">GitHub</a>
+          {% endif %}
+          {% if component.links.releases %}
+            <a href="{{ component.links.releases }}" title="Releases">📦</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="component-body">
+        {{ component.content }}
+      </div>
+
+      <div class="component-footer">
+        <div class="component-maintainers">
+          <span class="maintainers">Maintained by</span>
+          {% for maintainer in component.maintainers %}
+            <span class="maintainers">{{ maintainer }}</span>
+          {% endfor %}
+        </div>
+        <div class="component-tags">
+          {% for lang in component.languages %}
+            <span class="tag language">{{ lang }}</span>
+          {% endfor %}
+          {% for fw in component.frameworks %}
+            <span class="tag framework">{{ fw }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+</div>

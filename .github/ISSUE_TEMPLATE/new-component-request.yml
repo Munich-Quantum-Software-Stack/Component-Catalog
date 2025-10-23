@@ -15,19 +15,55 @@ body:
       required: true
 
   - type: input
-    id: maintainer
+    id: maintainers
     attributes:
-      label: 'Maintainer'
-      description: 'The maintaining team(s) or individual(s) for this component.'
-      placeholder: 'Maintainer...'
+      label: 'Maintainers'
+      description: 'The maintaining team(s) or individual(s) for this component, separated by commas. (e.g. "TUM, LRZ")'
+      placeholder: 'Maintainers...'
     validations:
       required: true
+
+  - type: input
+    id: docs
+    attributes:
+      label: 'Documentation URL'
+      description: 'A link to the component documentation or homepage. Can be left blank if not available.'
+      placeholder: 'https://...'
+    validations:
+      required: false
+
+  - type: input
+    id: github
+    attributes:
+      label: 'GitHub Repository URL'
+      description: 'A link to the component source code on GitHub. Can be left blank if not available.'
+      placeholder: 'https://...'
+    validations:
+      required: false
+
+  - type: input
+    id: languages
+    attributes:
+      label: 'Programming Languages'
+      description: 'The programming languages used in this component, separated by commas. (e.g. "python, c++")'
+      placeholder: 'pyton...'
+    validations:
+      required: false
+
+  - type: input
+    id: frameworks
+    attributes:
+      label: 'Built on:'
+      description: 'The quantum computing frameworks this component is built on, separated by commas. (e.g. "qiskit, PennyLane")'
+      placeholder: 'qiskit...'
+    validations:
+      required: false
 
   - type: textarea
     id: description
     attributes:
       label: 'Description'
       description: 'Describe the component in a few sentences, including what it does and how to use it.'
-      placeholder: 'Description...'
+      placeholder: 'Description... (Use Markdown syntax and `##` for subsections if needed)'
     validations:
       required: true
