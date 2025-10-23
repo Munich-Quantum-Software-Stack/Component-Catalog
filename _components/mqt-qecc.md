@@ -4,7 +4,7 @@ languages: ["python"]
 frameworks: ["qiskit","stim"]
 links:
   docs: "https://mqt.readthedocs.io/projects/qecc/en/latest/"
-  github: "https://github.com/cda-tum/mqt-qecc"
+  github: "https://github.com/munich-quantum-toolkit/qecc"
 maintainers: ["TUM (CDA)"]
 ---
 
