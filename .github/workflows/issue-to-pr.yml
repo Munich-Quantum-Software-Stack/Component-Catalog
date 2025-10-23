@@ -1,0 +1,70 @@
+# .github/workflows/issue-to-pr.yml
+
+name: '🤖 Auto-Generate Component PR from Issue'
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create_pr_from_issue:
+    # This job will only run if the new issue has the 'autogen-pr' label
+    if: contains(github.event.issue.labels.*.name, 'autogen-pr')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Parse Issue Body'
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+            template-path: .github/ISSUE_TEMPLATE/new-component-request.yml # optional but recommended
+
+      - name: 'Create Branch, Commit, and Push'
+        run: |
+          NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
+          MAINTAINER="${{ steps.issue-parser.outputs.issueparser_maintainer }}"
+          DESCRIPTION="${{ steps.issue-parser.outputs.issueparser_description }}"
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
+          BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
+
+          AUTHOR_NAME="${{ github.event.issue.user.login }}"
+          AUTHOR_EMAIL="${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com"
+
+          # Configure Git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create branch, add file, commit, and push
+          git checkout -b $BRANCH_NAME
+          echo -e "# ${NAME}" > "components/${SANITIZED_NAME}.md"
+          echo -e "" >> "components/${SANITIZED_NAME}.md"
+          echo -e "_Maintainer: ${MAINTAINER}_" >> "components/${SANITIZED_NAME}.md"
+          echo -e "" >> "components/${SANITIZED_NAME}.md"
+          echo -e "${DESCRIPTION}" >> "components/${SANITIZED_NAME}.md"
+          git add "components/${SANITIZED_NAME}.md"
+          git -c "author.name=${AUTHOR_NAME}" -c "author.email=${AUTHOR_EMAIL}" \
+            commit -m "feat: :card_file_box: add component \"${NAME}\" from Issue #${ISSUE_NUMBER}"
+          git push origin $BRANCH_NAME
+
+      - name: 'Create Pull Request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
+          SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
+          
+          # Create the PR using the GitHub CLI
+          gh pr create \
+            --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \
+            --body "Closes #${ISSUE_NUMBER}. This PR was automatically generated." \
+            --base main \
+            --head $BRANCH_NAME

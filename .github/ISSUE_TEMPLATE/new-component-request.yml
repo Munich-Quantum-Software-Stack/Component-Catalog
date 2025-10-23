@@ -1,0 +1,33 @@
+# .github/ISSUE_TEMPLATE/new-file-request.yml
+
+name: '🗃️ New Component Request'
+description: 'Add a new component to the component catalog.'
+title: '🗃️ [New Component]: '
+labels: ['autogen-pr'] # This label is crucial for triggering the action
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 'Component Name'
+      description: 'What is the name of the new component? (e.g. "Best Quantum Compiler")'
+      placeholder: 'Name...'
+    validations:
+      required: true
+
+  - type: input
+    id: maintainer
+    attributes:
+      label: 'Maintainer'
+      description: 'The maintaining team(s) or individual(s) for this component.'
+      placeholder: 'Maintainer...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 'Description'
+      description: 'Describe the component in a few sentences, including what it does and how to use it.'
+      placeholder: 'Description...'
+    validations:
+      required: true
