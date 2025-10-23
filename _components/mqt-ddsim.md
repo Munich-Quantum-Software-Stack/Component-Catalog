@@ -4,7 +4,7 @@ languages: ["python","c++"]
 frameworks: ["qiskit"]
 links:
   docs: "https://mqt.readthedocs.io/projects/ddsim"
-  github: "https://github.com/cda-tum/mqt-ddsim"
+  github: "https://github.com/munich-quantum-toolkit/ddsim"
 maintainers: ["TUM (CDA)"]
 ---
 
