@@ -66,5 +66,5 @@ jobs:
           gh pr create \
             --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \
             --body "Closes #${ISSUE_NUMBER}. This PR was automatically generated." \
-            --base main \
+            --base develop \
             --head $BRANCH_NAME
