@@ -1,7 +1,7 @@
 ---
 title: "MQT DDSIM"
 languages: ["python","c++"]
-frameworks: ["qiskit"]
+frameworks: ["qiskit", "MQT"]
 links:
   docs: "https://mqt.readthedocs.io/projects/ddsim"
   github: "https://github.com/munich-quantum-toolkit/ddsim"
