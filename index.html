@@ -21,6 +21,12 @@ title: Component Overview
           {% if component.links.releases %}
             <a href="{{ component.links.releases }}" title="Releases">📦</a>
           {% endif %}
+          {% if component.links.github %}
+            <div class="github-stars" data-repo="{{ component.links.github }}">
+              <span class="stars-icon">⭐</span>
+              <span class="stars-count">...</span>
+            </div>
+          {% endif %}
         </div>
       </div>
 

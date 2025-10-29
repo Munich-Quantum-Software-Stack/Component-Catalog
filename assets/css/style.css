@@ -40,11 +40,31 @@ body {
   font-size: 1.25rem;
 }
 
+.component-links {
+  display: flex;
+  flex-direction: row;
+}
 
 .component-links a {
   font-size: 0.9rem;
   text-decoration: none;
   margin-right: 8px;
+}
+
+.github-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #586069;
+}
+
+.github-stars .stars-icon {
+  font-size: 0.9rem;
+}
+
+.github-stars .stars-count {
+  font-weight: 600;
 }
 
 /* --- Body --- */
