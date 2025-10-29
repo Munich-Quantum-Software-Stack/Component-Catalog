@@ -1,5 +1,11 @@
 /* Add these new and updated styles to /assets/css/style.css */
 
+:root {
+  --mqv-blue: #1a8ab9;
+  --mqv-blue-light: #e6f4f9;
+  --mqv-blue-dark: #136a92;
+}
+
 body {
   font-family: sans-serif;
   background-color: #f4f4f9;
@@ -9,8 +15,7 @@ body {
 
 /* --- Header --- */
 .site-header {
-  background-color: #ffffff;
-  border-bottom: 2px solid #e1e4e8;
+  background: linear-gradient(135deg, var(--mqv-blue) 0%, var(--mqv-blue-dark) 100%);
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   margin-left: -2rem;
@@ -18,7 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(26, 138, 185, 0.15);
 }
 
 .header-logos {
@@ -31,12 +36,13 @@ body {
   height: 60px;
   width: auto;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .site-title {
   font-size: 1.8rem;
   margin: 0;
-  color: #24292e;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -58,7 +64,7 @@ main {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
-  color: #24292e;
+  color: var(--mqv-blue);
 }
 
 .intro-text {
@@ -80,7 +86,7 @@ main {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 0 1.5rem 0;
-  color: #24292e;
+  color: var(--mqv-blue);
 }
 
 .component-grid {
@@ -114,6 +120,7 @@ main {
 .component-header h2 {
   margin: 0;
   font-size: 1.25rem;
+  color: var(--mqv-blue-dark);
 }
 
 .component-links {
@@ -125,6 +132,13 @@ main {
   font-size: 0.9rem;
   text-decoration: none;
   margin-right: 8px;
+  color: var(--mqv-blue);
+  font-weight: 500;
+}
+
+.component-links a:hover {
+  color: var(--mqv-blue-dark);
+  text-decoration: underline;
 }
 
 .github-stars {
@@ -178,9 +192,9 @@ main {
 }
 
 .language {
-  background-color: #e6f7ff;
-  color: #2b619b;
-  border: 1px solid #2b619b;
+  background-color: var(--mqv-blue-light);
+  color: var(--mqv-blue-dark);
+  border: 1px solid var(--mqv-blue);
 }
 
 .framework {
