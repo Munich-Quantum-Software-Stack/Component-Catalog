@@ -4,7 +4,83 @@ body {
   font-family: sans-serif;
   background-color: #f4f4f9;
   margin: 0;
+  padding: 0;
+}
+
+/* --- Header --- */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e1e4e8;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #24292e;
+  font-weight: 600;
+}
+
+main {
+  padding: 0 2rem 2rem 2rem;
+}
+
+/* --- Introduction Section --- */
+.intro-section {
+  background-color: #ffffff;
+  border-radius: 8px;
   padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid #e1e4e8;
+}
+
+.intro-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #24292e;
+}
+
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #586069;
+  margin: 0;
+}
+
+/* --- Components Section --- */
+.components-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e1e4e8;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: #24292e;
 }
 
 .component-grid {
