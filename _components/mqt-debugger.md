@@ -1,6 +1,6 @@
 ---
 title: "MQT Debugger"
-languages: ["python", "c++"]
+languages: ["python", "c++", "c"]
 frameworks: ["MQT"]
 links:
   docs: "https://mqt.readthedocs.io/projects/debugger"
