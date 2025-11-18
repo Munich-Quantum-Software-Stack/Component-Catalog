@@ -44,15 +44,22 @@ jobs:
             echo "No changes to commit"
           fi
 
-      - name: "Optional: build site with Jekyll"
+      - name: Set up Ruby for Jekyll build
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Jekyll and build site (CI-safe)
         if: always()
         run: |
-          # Try a minimal jekyll build so artifacts are validated. If your project
-          # requires Bundler or a specific Ruby, replace this with your existing
-          # build step (bundle exec jekyll build).
-          gem install bundler jekyll || true
-          if command -v jekyll >/dev/null 2>&1; then
-            jekyll build || true
+          # Use Bundler if a Gemfile exists for reproducible installs. Otherwise
+          # install into the user gem dir to avoid system write permissions.
+          if [ -f Gemfile ]; then
+            gem install --no-document bundler || true
+            bundle install --jobs 4 --retry 3 --path vendor/bundle
+            bundle exec jekyll build || true
           else
-            echo "jekyll not available, skipping build"
+            gem install --user-install --no-document jekyll bundler || true
+            export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+            jekyll build || true
           fi
