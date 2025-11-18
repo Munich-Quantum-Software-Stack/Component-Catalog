@@ -33,8 +33,25 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Try to fetch precomputed JSON first
-  fetch(new URL('/assets/js/github-stars.json', window.location.origin))
+  // Try to fetch precomputed JSON first.
+  // Resolve the JSON relative to this script's location so the code works when
+  // the site is served under a base path (GitHub Pages, subpaths) or opened
+  // from a downloaded `_site` artifact.
+  let precomputedUrl;
+  const currentScript = Array.from(document.scripts).find(s => s.src && s.src.includes('github-stars.js'));
+  if (currentScript) {
+    try {
+      const scriptUrl = new URL(currentScript.src, window.location.href);
+      // Build URL to github-stars.json located in the same folder as this script
+      precomputedUrl = new URL('github-stars.json', scriptUrl.href.replace(/github-stars\.js$/, ''));
+    } catch (e) {
+      precomputedUrl = new URL('assets/js/github-stars.json', window.location.href);
+    }
+  } else {
+    precomputedUrl = new URL('assets/js/github-stars.json', window.location.href);
+  }
+
+  fetch(precomputedUrl)
     .then(r => {
       if (!r.ok) throw new Error('No precomputed stars file');
       return r.json();
