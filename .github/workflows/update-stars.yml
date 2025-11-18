@@ -30,19 +30,11 @@ jobs:
         run: |
           python scripts/fetch_stars.py
 
-      - name: Commit updated stars JSON (if changed)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/js/github-stars.json || true
-          if ! git diff --staged --quiet --exit-code; then
-            git commit -m "chore(ci): update precomputed GitHub stars"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+      # NOTE: we no longer commit the generated stars JSON to the repository.
+      # Instead we build the site (below) which will include the generated
+      # `assets/js/github-stars.json` in the `_site/` output, and upload the
+      # built site as an artifact. This keeps the precomputed stars out of the
+      # repository history.
 
       - name: Set up Ruby for Jekyll build
         uses: ruby/setup-ruby@v1
@@ -63,3 +55,9 @@ jobs:
             export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
             jekyll build || true
           fi
+
+      - name: Upload built site as artifact (includes precomputed stars)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-with-precomputed-stars
+          path: _site
