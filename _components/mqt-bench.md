@@ -8,4 +8,5 @@ links:
 maintainers: ["TUM (CDA)"]
 ---
 
-A circuit benchmark suite offering the same algorithms across abstraction levels to evaluate quantum software tools and hardware.
+A circuit benchmark suite offering the same algorithms across abstraction levels to evaluate quantum
+software tools and hardware.

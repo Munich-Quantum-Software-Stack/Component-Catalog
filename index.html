@@ -5,8 +5,15 @@ title: Component Overview
 
 <header class="site-header">
   <div class="header-logos">
-    <a href="https://www.munich-quantum-valley.de/"><img src="{{ '/assets/images/mqv.svg' | relative_url }}" alt="MQV Logo" class="header-logo"></a>
-    <a href="https://www.munich-quantum-valley.de/research/research-areas/mqss"><img src="{{ '/assets/images/mqss.png' | relative_url }}" alt="MQSS Logo" class="header-logo"></a>
+    <a href="https://www.munich-quantum-valley.de/"
+      ><img src="{{ '/assets/images/mqv.svg' | relative_url }}" alt="MQV Logo" class="header-logo"
+    /></a>
+    <a href="https://www.munich-quantum-valley.de/research/research-areas/mqss"
+      ><img
+        src="{{ '/assets/images/mqss.png' | relative_url }}"
+        alt="MQSS Logo"
+        class="header-logo"
+    /></a>
   </div>
   <h1 class="site-title">MQSS Component Catalog</h1>
 </header>
@@ -14,61 +21,54 @@ title: Component Overview
 <section class="intro-section">
   <h2 class="intro-title">Welcome to the MQSS Component Catalog</h2>
   <p class="intro-text">
-    This site provides a collection of all software components that are part of the Munich Quantum Software Stack (MQSS). 
-    Each component is designed to work together seamlessly, offering comprehensive tools for quantum computing development, 
-    simulation, and optimization. Explore the components below to find the right tools for your needs.
+    This site provides a collection of all software components that are part of the Munich Quantum
+    Software Stack (MQSS). Each component is designed to work together seamlessly, offering
+    comprehensive tools for quantum computing development, simulation, and optimization. Explore the
+    components below to find the right tools for your needs.
   </p>
 </section>
 
 <section class="components-section">
   <h3 class="section-title">Components</h3>
   <div class="component-grid">
-  {% for component in site.components %}
+    {% for component in site.components %}
     <div class="component-box">
-
       <div class="component-header">
         <h2>{{ component.title }}</h2>
         <div class="component-links">
           {% if component.links.docs %}
-            <a href="{{ component.links.docs }}" title="Documentation">Docs</a>
-          {% endif %}
-          {% if component.links.github %}
-            <a href="{{ component.links.github }}" title="GitHub">GitHub</a>
-          {% endif %}
-          {% if component.links.releases %}
-            <a href="{{ component.links.releases }}" title="Releases">📦</a>
-          {% endif %}
-          {% if component.links.github %}
-            <div class="github-stars" data-repo="{{ component.links.github }}">
-              <span class="stars-icon">⭐</span>
-              <span class="stars-count">...</span>
-            </div>
+          <a href="{{ component.links.docs }}" title="Documentation">Docs</a>
+          {% endif %} {% if component.links.github %}
+          <a href="{{ component.links.github }}" title="GitHub">GitHub</a>
+          {% endif %} {% if component.links.releases %}
+          <a href="{{ component.links.releases }}" title="Releases">📦</a>
+          {% endif %} {% if component.links.github %}
+          <div class="github-stars" data-repo="{{ component.links.github }}">
+            <span class="stars-icon">⭐</span>
+            <span class="stars-count">...</span>
+          </div>
           {% endif %}
         </div>
       </div>
 
-      <div class="component-body">
-        {{ component.content }}
-      </div>
+      <div class="component-body">{{ component.content }}</div>
 
       <div class="component-footer">
         <div class="component-maintainers">
           <span class="maintainers">Maintained by</span>
           {% for maintainer in component.maintainers %}
-            <span class="maintainers">{{ maintainer }}</span>
+          <span class="maintainers">{{ maintainer }}</span>
           {% endfor %}
         </div>
         <div class="component-tags">
           {% for lang in component.languages %}
-            <span class="tag language">{{ lang }}</span>
-          {% endfor %}
-          {% for fw in component.frameworks %}
-            <span class="tag framework">{{ fw }}</span>
+          <span class="tag language">{{ lang }}</span>
+          {% endfor %} {% for fw in component.frameworks %}
+          <span class="tag framework">{{ fw }}</span>
           {% endfor %}
         </div>
       </div>
-
     </div>
-  {% endfor %}
+    {% endfor %}
   </div>
 </section>

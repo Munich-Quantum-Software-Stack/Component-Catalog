@@ -1,6 +1,6 @@
 # .github/workflows/issue-to-pr.yml
 
-name: '🤖 Auto-Generate Component PR from Issue'
+name: "🤖 Auto-Generate Component PR from Issue"
 
 on:
   issues:
@@ -16,16 +16,16 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'autogen-pr')
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout Repository'
+      - name: "Checkout Repository"
         uses: actions/checkout@v4
 
-      - name: 'Parse Issue Body'
+      - name: "Parse Issue Body"
         uses: stefanbuck/github-issue-parser@v3
         id: issue-parser
         with:
-            template-path: .github/ISSUE_TEMPLATE/new-component-request.yml # optional but recommended
+          template-path: .github/ISSUE_TEMPLATE/new-component-request.yml # optional but recommended
 
-      - name: 'Create Branch, Commit, and Push'
+      - name: "Create Branch, Commit, and Push"
         run: |
           NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
           MAINTAINERS="${{ steps.issue-parser.outputs.issueparser_maintainers }}"
@@ -53,7 +53,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           echo -e "---" > "_components/${SANITIZED_NAME}.md"
           echo -e "title: \"${NAME}\"" >> "_components/${SANITIZED_NAME}.md"
-          
+
           echo -e "languages: $LANG_ARRAY" >> "_components/${SANITIZED_NAME}.md"
           echo -e "frameworks: $FW_ARRAY" >> "_components/${SANITIZED_NAME}.md"
 
@@ -68,18 +68,18 @@ jobs:
           fi
 
           echo -e "maintainers: $MAINT_ARRAY" >> "_components/${SANITIZED_NAME}.md"
-          
+
           echo -e "---" >> "_components/${SANITIZED_NAME}.md"
           echo -e "" >> "_components/${SANITIZED_NAME}.md"
           echo -e "${DESCRIPTION}" >> "_components/${SANITIZED_NAME}.md"
 
           git add "_components/${SANITIZED_NAME}.md"
-          
+
           git -c "author.name=${AUTHOR_NAME}" -c "author.email=${AUTHOR_EMAIL}" \
             commit -m "feat: :card_file_box: add component \"${NAME}\" from Issue #${ISSUE_NUMBER}"
           git push origin $BRANCH_NAME
 
-      - name: 'Create Pull Request'
+      - name: "Create Pull Request"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -87,7 +87,7 @@ jobs:
           SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
-          
+
           # Create the PR using the GitHub CLI
           gh pr create \
             --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \

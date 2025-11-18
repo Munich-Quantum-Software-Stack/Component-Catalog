@@ -1,6 +1,6 @@
 ---
 title: "MQSS QDMI Devices Suite"
-languages: ["C"," C++"]
+languages: ["C", " C++"]
 frameworks: ["dcdb"]
 links:
   docs: "https://munich-quantum-software-stack.github.io/MQSS-QDMI-Devices-Suite/index.html"

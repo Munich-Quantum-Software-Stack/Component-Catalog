@@ -1,7 +1,7 @@
 ---
 title: "MQT QECC"
 languages: ["python"]
-frameworks: ["qiskit","stim"]
+frameworks: ["qiskit", "stim"]
 links:
   docs: "https://mqt.readthedocs.io/projects/qecc/en/latest/"
   github: "https://github.com/munich-quantum-toolkit/qecc"

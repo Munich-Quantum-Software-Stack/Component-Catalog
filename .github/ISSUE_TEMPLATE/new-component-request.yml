@@ -1,69 +1,77 @@
 # .github/ISSUE_TEMPLATE/new-file-request.yml
 
-name: '🗃️ New Component Request'
-description: 'Add a new component to the component catalog.'
-title: '🗃️ [New Component]: '
-labels: ['autogen-pr'] # This label is crucial for triggering the action
+name: "🗃️ New Component Request"
+description: "Add a new component to the component catalog."
+title: "🗃️ [New Component]: "
+labels: ["autogen-pr"] # This label is crucial for triggering the action
 body:
   - type: input
     id: name
     attributes:
-      label: 'Component Name'
+      label: "Component Name"
       description: 'What is the name of the new component? (e.g. "Best Quantum Compiler")'
-      placeholder: 'Name...'
+      placeholder: "Name..."
     validations:
       required: true
 
   - type: input
     id: maintainers
     attributes:
-      label: 'Maintainers'
-      description: 'The maintaining team(s) or individual(s) for this component, separated by commas. (e.g. "TUM, LRZ")'
-      placeholder: 'Maintainers...'
+      label: "Maintainers"
+      description:
+        'The maintaining team(s) or individual(s) for this component, separated by commas. (e.g.
+        "TUM, LRZ")'
+      placeholder: "Maintainers..."
     validations:
       required: true
 
   - type: input
     id: docs
     attributes:
-      label: 'Documentation URL'
-      description: 'A link to the component documentation or homepage. Can be left blank if not available.'
-      placeholder: 'https://...'
+      label: "Documentation URL"
+      description:
+        "A link to the component documentation or homepage. Can be left blank if not available."
+      placeholder: "https://..."
     validations:
       required: false
 
   - type: input
     id: github
     attributes:
-      label: 'GitHub Repository URL'
-      description: 'A link to the component source code on GitHub. Can be left blank if not available.'
-      placeholder: 'https://...'
+      label: "GitHub Repository URL"
+      description:
+        "A link to the component source code on GitHub. Can be left blank if not available."
+      placeholder: "https://..."
     validations:
       required: false
 
   - type: input
     id: languages
     attributes:
-      label: 'Programming Languages'
-      description: 'The programming languages used in this component, separated by commas. (e.g. "python, c++")'
-      placeholder: 'pyton...'
+      label: "Programming Languages"
+      description:
+        'The programming languages used in this component, separated by commas. (e.g. "python, c++")'
+      placeholder: "python..."
     validations:
       required: false
 
   - type: input
     id: frameworks
     attributes:
-      label: 'Built on:'
-      description: 'The quantum computing frameworks this component is built on, separated by commas. (e.g. "qiskit, PennyLane")'
-      placeholder: 'qiskit...'
+      label: "Built on:"
+      description:
+        'The quantum computing frameworks this component is built on, separated by commas. (e.g.
+        "qiskit, PennyLane")'
+      placeholder: "qiskit..."
     validations:
       required: false
 
   - type: textarea
     id: description
     attributes:
-      label: 'Description'
-      description: 'Describe the component in a few sentences, including what it does and how to use it.'
-      placeholder: 'Description... (Use Markdown syntax and `##` for subsections if needed)'
+      label: "Description"
+      description:
+        "Describe the component in a few sentences, including what it does and how to use it."
+      placeholder: "Description... (Use Markdown syntax and `##` for subsections if needed)"
     validations:
       required: true

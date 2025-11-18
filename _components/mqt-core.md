@@ -1,6 +1,6 @@
 ---
 title: "MQT Core"
-languages: ["c++","python"]
+languages: ["c++", "python"]
 frameworks: ["qiskit"]
 links:
   docs: "https://mqt.readthedocs.io/projects/core"
@@ -8,4 +8,5 @@ links:
 maintainers: ["TUM (CDA)"]
 ---
 
-MQT Core forms the backbone of the software tools developed as part of the Munich Quantum Toolkit (MQT) and connects it to Qiskit.
+MQT Core forms the backbone of the software tools developed as part of the Munich Quantum Toolkit
+(MQT) and connects it to Qiskit.

@@ -4,32 +4,36 @@
 // 2) If an entry for a repo exists there, use it.
 // 3) If not, fall back to the public GitHub API (same behavior as before).
 
-document.addEventListener('DOMContentLoaded', function() {
-  const starsElements = document.querySelectorAll('.github-stars');
+document.addEventListener("DOMContentLoaded", function () {
+  const starsElements = document.querySelectorAll(".github-stars");
 
   // Helper to format numbers with commas
   function fmt(n) {
-    try { return n.toLocaleString(); } catch (e) { return String(n); }
+    try {
+      return n.toLocaleString();
+    } catch (e) {
+      return String(n);
+    }
   }
 
   // Fallback API fetch (same as before)
   function fetchFromApi(owner, repo, element) {
     fetch(`https://api.github.com/repos/${owner}/${repo}`)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('API request failed');
+          throw new Error("API request failed");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         const stars = data.stargazers_count;
-        const starsCount = element.querySelector('.stars-count');
-        starsCount.textContent = stars != null ? fmt(stars) : '—';
+        const starsCount = element.querySelector(".stars-count");
+        starsCount.textContent = stars != null ? fmt(stars) : "—";
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(`Error fetching stars for ${owner}/${repo}:`, error);
-        const starsCount = element.querySelector('.stars-count');
-        starsCount.textContent = '—';
+        const starsCount = element.querySelector(".stars-count");
+        starsCount.textContent = "—";
       });
   }
 
@@ -38,40 +42,45 @@ document.addEventListener('DOMContentLoaded', function() {
   // the site is served under a base path (GitHub Pages, subpaths) or opened
   // from a downloaded `_site` artifact.
   let precomputedUrl;
-  const currentScript = Array.from(document.scripts).find(s => s.src && s.src.includes('github-stars.js'));
+  const currentScript = Array.from(document.scripts).find(
+    (s) => s.src && s.src.includes("github-stars.js"),
+  );
   if (currentScript) {
     try {
       const scriptUrl = new URL(currentScript.src, window.location.href);
       // Build URL to github-stars.json located in the same folder as this script
-      precomputedUrl = new URL('github-stars.json', scriptUrl.href.replace(/github-stars\.js$/, ''));
+      precomputedUrl = new URL(
+        "github-stars.json",
+        scriptUrl.href.replace(/github-stars\.js$/, ""),
+      );
     } catch (e) {
-      precomputedUrl = new URL('assets/js/github-stars.json', window.location.href);
+      precomputedUrl = new URL("assets/js/github-stars.json", window.location.href);
     }
   } else {
-    precomputedUrl = new URL('assets/js/github-stars.json', window.location.href);
+    precomputedUrl = new URL("assets/js/github-stars.json", window.location.href);
   }
 
   fetch(precomputedUrl)
-    .then(r => {
-      if (!r.ok) throw new Error('No precomputed stars file');
+    .then((r) => {
+      if (!r.ok) throw new Error("No precomputed stars file");
       return r.json();
     })
-    .then(mapping => {
+    .then((mapping) => {
       // mapping keys are "owner/repo" or filenames; values are numbers or null
-      starsElements.forEach(element => {
-        const repoUrl = element.getAttribute('data-repo');
+      starsElements.forEach((element) => {
+        const repoUrl = element.getAttribute("data-repo");
         const match = repoUrl ? repoUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/) : null;
         if (match) {
           const owner = match[1];
           const repo = match[2];
           const key = `${owner}/${repo}`;
           const val = mapping[key];
-          const starsCount = element.querySelector('.stars-count');
-          if (typeof val === 'number') {
+          const starsCount = element.querySelector(".stars-count");
+          if (typeof val === "number") {
             starsCount.textContent = fmt(val);
           } else if (val === null) {
             // explicit null in mapping: indicate unknown
-            starsCount.textContent = '—';
+            starsCount.textContent = "—";
           } else {
             // Not in mapping: fallback to API
             fetchFromApi(owner, repo, element);
@@ -81,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(() => {
       // No precomputed file available -> fallback to fetching per-repo (original behavior)
-      starsElements.forEach(element => {
-        const repoUrl = element.getAttribute('data-repo');
+      starsElements.forEach((element) => {
+        const repoUrl = element.getAttribute("data-repo");
         const match = repoUrl ? repoUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/) : null;
         if (match) {
           const owner = match[1];
