@@ -1,9 +1,9 @@
 ---
 title: "MQT Bench"
 languages: ["python"]
-frameworks: ["qiskit"]
+frameworks: ["qiskit", "MQT"]
 links:
-  docs: "https://mqt.readthedocs.io/projects/bench/en/latest/"
+  docs: "https://mqt.readthedocs.io/projects/bench"
   github: "https://github.com/munich-quantum-toolkit/bench"
 maintainers: ["TUM (CDA)"]
 ---

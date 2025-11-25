@@ -8,4 +8,5 @@ links:
 maintainers: ["LRZ (QCT)"]
 ---
 
-Implementation of a custom PennyLane backend which enables users to send quantum jobs to LRZ's infrastructure using the PennyLane frontend.
+Implementation of a custom PennyLane backend which enables users to send quantum jobs to LRZ's
+infrastructure using the PennyLane frontend.
