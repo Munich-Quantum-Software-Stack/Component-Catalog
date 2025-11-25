@@ -76,3 +76,29 @@ details. Please follow these steps:
 If you have any feature requests or encounter any bugs, please open an issue in the "Issues" tab.
 Use the appropriate issue template to provide detailed information about your request or the bug you
 encountered. This will help us address your concerns more effectively.
+
+## Local build and preview
+
+You can build and preview the site locally in a way that mirrors the CI workflow.
+
+Prerequisites:
+
+- uv installed and available in PATH
+- Python 3.10 or newer
+- Either Docker (recommended) or a local Jekyll installation
+
+Steps:
+
+- Optionally set a GitHub token to avoid rate limits when fetching star counts:
+  - Linux/macOS: `export GITHUB_TOKEN=ghp_your_token`
+- Run the local deploy helper:
+  - `bash scripts/deploy_local.sh` # builds into ./\_site and serves on http://localhost:4000
+  - Options:
+    - `--port <PORT>` change the local server port (default 4000)
+    - `--skip-fetch` skip the GitHub stars fetch step
+
+Notes:
+
+- The fetch script is executed via uv and targets Python >= 3.10.
+- Building prefers Docker image `jekyll/jekyll:4` and falls back to `jekyll build` if Docker is not
+  available.
