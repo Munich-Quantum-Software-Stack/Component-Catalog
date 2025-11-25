@@ -3,8 +3,8 @@ title: "MQSS QDMI Devices Suite"
 languages: ["c", " c++"]
 frameworks: ["dcdb"]
 links:
-  docs: "https://munich-quantum-software-stack.github.io/MQSS-QDMI-Devices-Suite/index.html"
-  github: "https://github.com/Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite?tab=readme-ov-file"
+  docs: "https://munich-quantum-software-stack.github.io/MQSS-QDMI-Devices-Suite/"
+  github: "https://github.com/Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite"
 maintainers: ["LRZ (QCT)"]
 ---
 

@@ -8,5 +8,4 @@ links:
 maintainers: ["TUM (CDA)"]
 ---
 
-A tool for quantum circuit equivalence checking developed as part of the Munich Quantum Toolkit
-(MQT).
+A tool for quantum circuit equivalence checking.

@@ -1,9 +1,9 @@
 ---
 title: "MQT QECC"
 languages: ["python"]
-frameworks: ["qiskit", "stim"]
+frameworks: ["qiskit", "stim", "MQT"]
 links:
-  docs: "https://mqt.readthedocs.io/projects/qecc/en/latest/"
+  docs: "https://mqt.readthedocs.io/projects/qecc"
   github: "https://github.com/munich-quantum-toolkit/qecc"
 maintainers: ["TUM (CDA)"]
 ---

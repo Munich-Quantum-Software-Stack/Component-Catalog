@@ -8,5 +8,4 @@ links:
 maintainers: ["TUM (CDA)"]
 ---
 
-A classical quantum circuit simulator based on decision diagrams developed as part of the Munich
-Quantum Toolkit (MQT).
+A classical quantum circuit simulator based on decision diagrams.

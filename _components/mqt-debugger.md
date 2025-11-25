@@ -8,5 +8,4 @@ links:
 maintainers: ["TUM (CDA)"]
 ---
 
-A semi-automated quantum program debugging tool developed as part of the Munich Quantum Toolkit
-(MQT).
+A semi-automated quantum program debugging tool.
