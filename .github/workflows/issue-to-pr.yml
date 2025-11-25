@@ -88,9 +88,19 @@ jobs:
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
 
+          # Build PR body: include a brief message and the contents of the created component file
+          COMPONENT_FILE="_components/${SANITIZED_NAME}.md"
+          PR_MESSAGE="Closes #${ISSUE_NUMBER}. This PR was automatically generated."
+          if [ -f "$COMPONENT_FILE" ]; then
+            # Preserve newlines; printf prefix then append file contents
+            PR_BODY="$(printf '%s\n\n---\n\nPreview:\n```\n' "$PR_MESSAGE")$(cat "$COMPONENT_FILE")$(printf '\n```')"
+          else
+            PR_BODY="$PR_MESSAGE"
+          fi
+
           # Create the PR using the GitHub CLI
           gh pr create \
             --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \
-            --body "Closes #${ISSUE_NUMBER}. This PR was automatically generated." \
+            --body "Closes #${ISSUE_NUMBER}. This PR was automatically generated.\nSummary:```\n${}\n```" \
             --base develop \
             --head $BRANCH_NAME
