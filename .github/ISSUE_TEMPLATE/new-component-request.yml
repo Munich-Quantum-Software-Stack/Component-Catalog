@@ -50,8 +50,8 @@ body:
     attributes:
       label: "Programming Languages"
       description:
-        'The programming languages used in this component, separated by commas. (e.g. "python, c++")'
-      placeholder: "python..."
+        'The programming languages used in this component, separated by commas. (e.g. "Python, C++")'
+      placeholder: "Python..."
     validations:
       required: false
 
@@ -61,8 +61,8 @@ body:
       label: "Built on:"
       description:
         'The quantum computing frameworks this component is built on, separated by commas. (e.g.
-        "qiskit, PennyLane")'
-      placeholder: "qiskit..."
+        "Qiskit, PennyLane")'
+      placeholder: "Qiskit..."
     validations:
       required: false
 

@@ -1,11 +1,11 @@
 ---
 title: "MQT QCEC"
-languages: ["python", "c++"]
-frameworks: ["qiskit", "MQT"]
+languages: ["Python", "C++"]
+frameworks: ["Qiskit", "MQT"]
 links:
   docs: "https://mqt.readthedocs.io/projects/qcec"
   github: "https://github.com/munich-quantum-toolkit/qcec"
-maintainers: ["TUM (CDA)"]
+maintainers: ["TUM (CDA) / MQSC"]
 ---
 
 A tool for quantum circuit equivalence checking.

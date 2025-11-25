@@ -1,11 +1,11 @@
 ---
-title: "MQSS-Qiskit-Adapter"
-languages: ["python"]
-frameworks: ["qiskit"]
+title: "MQSS Qiskit Adapter"
+languages: ["Python"]
+frameworks: ["Qiskit"]
 links:
   docs: "https://munich-quantum-software-stack.github.io/MQSS-Interfaces/qiskit/"
   github: "https://github.com/Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter"
 maintainers: ["LRZ (QCT)"]
 ---
 
-MQSS Qiskit Adapter is a Qiskit provider that submits quantum jobs to LRZ's infrastructure.
+A Qiskit provider that allows submitting quantum jobs to LRZ's infrastructure.
