@@ -1,6 +1,6 @@
 ---
 title: "MQSS Pennylane Adapter"
-languages: ["python"]
+languages: ["Python"]
 frameworks: ["PennyLane"]
 links:
   docs: "https://munich-quantum-software-stack.github.io/MQSS-Interfaces/pennylane/"

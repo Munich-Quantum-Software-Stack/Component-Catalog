@@ -1,11 +1,11 @@
 ---
 title: "MQT Bench"
-languages: ["python"]
-frameworks: ["qiskit", "MQT"]
+languages: ["Python"]
+frameworks: ["Qiskit", "MQT"]
 links:
   docs: "https://mqt.readthedocs.io/projects/bench"
   github: "https://github.com/munich-quantum-toolkit/bench"
-maintainers: ["TUM (CDA)"]
+maintainers: ["TUM (CDA) / MQSC"]
 ---
 
 A circuit benchmark suite offering the same algorithms across abstraction levels to evaluate quantum

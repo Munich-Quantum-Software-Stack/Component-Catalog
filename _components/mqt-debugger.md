@@ -1,11 +1,11 @@
 ---
 title: "MQT Debugger"
-languages: ["python", "c++", "c"]
+languages: ["Python", "C++", "C"]
 frameworks: ["MQT"]
 links:
   docs: "https://mqt.readthedocs.io/projects/debugger"
   github: "https://github.com/munich-quantum-toolkit/debugger"
-maintainers: ["TUM (CDA)"]
+maintainers: ["TUM (CDA) / MQSC"]
 ---
 
 A semi-automated quantum program debugging tool.
