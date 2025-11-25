@@ -8,6 +8,7 @@
   "munich-quantum-toolkit/core": 101,
   "munich-quantum-toolkit/ddsim": 156,
   "munich-quantum-toolkit/debugger": 20,
+  "munich-quantum-toolkit/naviz": 12,
   "munich-quantum-toolkit/predictor": 81,
   "munich-quantum-toolkit/problemsolver": 53,
   "munich-quantum-toolkit/qcec": 105,
