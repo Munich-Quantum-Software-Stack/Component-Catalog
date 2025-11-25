@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: "Parse Issue Body"
-        uses: stefanbuck/github-issue-parser@v3
+        uses: stefanbuck/github-issue-parser@2ea9b35a8c584529ed00891a8f7e41dc46d0441e # v3
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/new-component-request.yml # optional but recommended
