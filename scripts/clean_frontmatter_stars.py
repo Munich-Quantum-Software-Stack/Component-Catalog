@@ -10,8 +10,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-import yaml
-
 ROOT = Path(__file__).resolve().parents[1]
 COMPONENTS_DIR = ROOT / "_components"
 
@@ -29,18 +27,20 @@ def strip_stars_from_text(text: str) -> tuple[str, bool]:
     if not m:
         return text, False
     fm_raw, body = m.group(1), m.group(2)
-    try:
-        fm = yaml.safe_load(fm_raw) or {}
-    except yaml.YAMLError:
-        # If YAML parsing fails, don't touch the file
+
+    # Edit raw frontmatter lines to remove any 'stars:' entry while preserving
+    # all other formatting (leading spaces, quoting, list styles).
+    lines = fm_raw.splitlines(keepends=True)
+    pattern = re.compile(r"^\s*stars\s*:\s*.*$")
+    new_lines = [ln for ln in lines if not pattern.match(ln.rstrip("\r\n"))]
+
+    if len(new_lines) == len(lines):
+        # nothing removed
         return text, False
 
-    if "stars" not in fm:
-        return text, False
-
-    fm.pop("stars", None)
-    new_fm = yaml.safe_dump(fm, sort_keys=False).strip()
-    new_text = f"---\n{new_fm}\n---\n{body}"
+    # Reconstruct frontmatter preserving original line endings/layout
+    new_fm_raw = "".join(new_lines).rstrip("\n\r")
+    new_text = f"---\n{new_fm_raw}\n---\n{body}"
     return new_text, True
 
 
