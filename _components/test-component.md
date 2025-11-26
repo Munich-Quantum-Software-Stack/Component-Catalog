@@ -1,6 +1,6 @@
 ---
 title: "Test Component"
-languages: ["Python"," C++"]
+languages: ["Python", " C++"]
 frameworks: ["Qiskit"]
 links:
   docs: "https://github.com/Munich-Quantum-Software-Stack/Component-Catalog/issues"
