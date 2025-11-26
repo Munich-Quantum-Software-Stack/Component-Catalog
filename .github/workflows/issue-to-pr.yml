@@ -93,7 +93,7 @@ jobs:
           PR_MESSAGE="Closes #${ISSUE_NUMBER}. This PR was automatically generated."
           if [ -f "$COMPONENT_FILE" ]; then
             # Preserve newlines; printf prefix then append file contents
-            PR_BODY="$(printf '%s\n\n---\n\nSummary:\n```\n' "$PR_MESSAGE")$(cat "$COMPONENT_FILE")$(printf '\n```')"
+            PR_BODY="$(printf '%s\n\n---\n\nSummary:\n```\n\n' "$PR_MESSAGE")$(cat "$COMPONENT_FILE")$(printf '\n```')"
           else
             PR_BODY="$PR_MESSAGE"
           fi
