@@ -12,6 +12,17 @@ ci:
   autofix_commit_msg: "🎨 pre-commit fixes"
 
 repos:
+  # Local hook: remove transient `stars` frontmatter from component files
+  - repo: local
+    hooks:
+      - id: remove-component-stars
+        name: Remove `stars` from component frontmatter
+        entry: python3 scripts/clean_frontmatter_stars.py
+        language: system
+        files: ^_components/.*\.md$
+        stages: [pre-commit]
+        pass_filenames: false
+
   # Standard hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -69,7 +80,7 @@ repos:
           - --tab-width=2
         exclude: ^docs/header\.html$
 
-  # Catch common capitalization mistakes
+  # Catch common capitalization mistakes (local)
   - repo: local
     hooks:
       - id: disallow-caps

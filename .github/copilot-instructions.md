@@ -64,6 +64,21 @@ If the project uses Bundler, prefix with `bundle exec` (e.g. `bundle exec jekyll
 unsure, try `jekyll --version` and fall back to `bundle exec jekyll` when Gemfile/Bundler is
 present.
 
+Pre-commit hook (recommended):
+
+- This repo includes a `pre-commit` configuration and a small local hook that removes the transient
+  `stars` frontmatter from `_components/*.md` before a commit. That prevents accidentally committing
+  CI-injected `stars` values.
+- To enable locally:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+The hook runs `python3 scripts/clean_frontmatter_stars.py` and will exit non-zero if it removed any
+`stars` entries so you can inspect changes before committing. This is optional but recommended.
+
 ## Integration points & gotchas
 
 - GitHub stars are fetched client-side from the public GitHub API. This works without auth but is
