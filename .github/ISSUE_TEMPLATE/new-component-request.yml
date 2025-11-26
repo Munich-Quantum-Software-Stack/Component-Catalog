@@ -36,6 +36,15 @@ body:
       required: false
 
   - type: input
+    id: releases
+    attributes:
+      label: "PyPI Release URL"
+      description: "A link to the PyPI release of this project. Can be left blank if not available."
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: input
     id: github
     attributes:
       label: "GitHub Repository URL"
