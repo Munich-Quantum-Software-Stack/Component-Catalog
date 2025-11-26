@@ -93,7 +93,7 @@ jobs:
           PR_MESSAGE="Closes #${ISSUE_NUMBER}. This PR was automatically generated."
           if [ -f "$COMPONENT_FILE" ]; then
             # Preserve newlines; printf prefix then append file contents
-            PR_BODY="$(printf '%s\n\n---\n\nPreview:\n```\n' "$PR_MESSAGE")$(cat "$COMPONENT_FILE")$(printf '\n```')"
+            PR_BODY="$(printf '%s\n\n---\n\nSummary:\n```\n' "$PR_MESSAGE")$(cat "$COMPONENT_FILE")$(printf '\n```')"
           else
             PR_BODY="$PR_MESSAGE"
           fi
@@ -101,6 +101,6 @@ jobs:
           # Create the PR using the GitHub CLI
           gh pr create \
             --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \
-            --body "Closes #${ISSUE_NUMBER}. This PR was automatically generated.\nSummary:```\n${}\n```" \
+            --body "${PR_BODY}" \
             --base develop \
             --head $BRANCH_NAME
