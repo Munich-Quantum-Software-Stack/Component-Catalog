@@ -65,7 +65,7 @@ jobs:
             IFS=','
             for lang in $LANGUAGES; do
               lang_trim=$(echo "$lang" | sed 's/^ *//; s/ *$//')
-              echo "  - \"${lang_trim}\"" >> "_components/${SANITIZED_NAME}.md"
+              echo "  - ${lang_trim}" >> "_components/${SANITIZED_NAME}.md"
             done
             IFS="$OLDIFS"
           fi
@@ -77,7 +77,7 @@ jobs:
             IFS=','
             for fw in $FRAMEWORKS; do
               fw_trim=$(echo "$fw" | sed 's/^ *//; s/ *$//')
-              echo "  - \"${fw_trim}\"" >> "_components/${SANITIZED_NAME}.md"
+              echo "  - ${fw_trim}" >> "_components/${SANITIZED_NAME}.md"
             done
             IFS="$OLDIFS"
           fi
@@ -102,7 +102,7 @@ jobs:
             IFS=','
             for m in $MAINTAINERS; do
               m_trim=$(echo "$m" | sed 's/^ *//; s/ *$//')
-              echo "  - \"${m_trim}\"" >> "_components/${SANITIZED_NAME}.md"
+              echo "  - ${m_trim}" >> "_components/${SANITIZED_NAME}.md"
             done
             IFS="$OLDIFS"
           fi
