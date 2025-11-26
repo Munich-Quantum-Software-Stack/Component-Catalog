@@ -36,6 +36,17 @@ body:
       required: false
 
   - type: input
+    id: releases
+    attributes:
+      label: "Release / Download URL"
+      description:
+        "A link to releases, downloads, or package artifact for the component, such as via PyPI. Can
+        be left blank if not available."
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: input
     id: github
     attributes:
       label: "GitHub Repository URL"
