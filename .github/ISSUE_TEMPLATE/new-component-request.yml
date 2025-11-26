@@ -38,10 +38,8 @@ body:
   - type: input
     id: releases
     attributes:
-      label: "Release / Download URL"
-      description:
-        "A link to releases, downloads, or package artifact for the component, such as via PyPI. Can
-        be left blank if not available."
+      label: "PyPI Release URL"
+      description: "A link to the PyPI release of this project. Can be left blank if not available."
       placeholder: "https://..."
     validations:
       required: false
