@@ -28,7 +28,7 @@ GITHUB_API = "https://api.github.com/repos/{owner}/{repo}"
 TOKEN = os.environ.get("GITHUB_TOKEN")
 
 
-def parse_frontmatter_and_body(md_text: str) -> tuple[dict, str]:
+def parse_frontmatter_and_body(md_text: str) -> tuple[dict, str, str]:
     """Parse the frontmatter of a markdown file and return its values.
 
     Args:
@@ -45,7 +45,8 @@ def parse_frontmatter_and_body(md_text: str) -> tuple[dict, str]:
     except yaml.YAMLError:
         fm = {}
     body = m.group(2)
-    return fm, body
+    raw = m.group(1)
+    return fm, body, raw
 
 
 def repo_from_url(url: str | None) -> str | None:
@@ -104,7 +105,7 @@ def main() -> None:
     # First pass: collect repos and fetch counts
     for f in files:
         text = f.read_text(encoding="utf-8")
-        fm, _ = parse_frontmatter_and_body(text)
+        fm, _, _ = parse_frontmatter_and_body(text)
         links = fm.get("links") or {}
         gh = links.get("github")
         repo = repo_from_url(gh)
@@ -121,13 +122,22 @@ def main() -> None:
     # Jekyll can sort by it during the build.
     for f in files:
         text = f.read_text(encoding="utf-8")
-        fm, body = parse_frontmatter_and_body(text)
+        fm, body, raw = parse_frontmatter_and_body(text)
         links = fm.get("links") or {}
         repo = repo_from_url(links.get("github"))
         stars = mapping.get(repo) if repo in mapping else None
-        fm["stars"] = stars
-        new_fm = yaml.safe_dump(fm, sort_keys=False).strip()
-        new_text = f"---\n{new_fm}\n---\n{body}"
+        # Update raw frontmatter text to avoid changing formatting/styles for
+        # lists and quoting. We remove any existing 'stars:' line and insert a
+        # new one at the top of the frontmatter.
+        lines = raw.splitlines(keepends=True)
+        # Remove existing stars lines
+        lines = [ln for ln in lines if not re.match(r"^\s*stars\s*:\s*", ln)]
+        # Prepare value
+        val = "null" if stars is None else str(stars)
+        # Insert at top
+        lines.insert(0, f"stars: {val}\n")
+        new_raw = "".join(lines).rstrip("\n")
+        new_text = f"---\n{new_raw}\n---\n{body}"
         f.write_text(new_text, encoding="utf-8")
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
