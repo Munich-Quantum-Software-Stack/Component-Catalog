@@ -31,7 +31,7 @@ title: Component Overview
 <section class="components-section">
   <h3 class="section-title">Components</h3>
   <div class="component-grid">
-    {% for component in site.components %}
+    {% assign comps = site.components | sort: 'stars' | reverse %} {% for component in comps %}
     <div class="component-box">
       <div class="component-header">
         <h2>{{ component.title }}</h2>
