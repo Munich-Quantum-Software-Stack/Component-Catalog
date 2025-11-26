@@ -48,12 +48,8 @@ def main() -> int:
     """Main entry point.
 
     Returns:
-        int: 1 if an error occurred, otherwise 0.
+        int: 1 if files were modified, otherwise 0.
     """
-    github_stars_file = ROOT / "assets" / "js" / "github-stars.json"
-    if github_stars_file.exists():
-        github_stars_file.unlink()
-
     md_files = sorted(COMPONENTS_DIR.glob("*.md"))
     changed = []
     for p in md_files:
