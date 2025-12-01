@@ -5,6 +5,7 @@ languages:
 frameworks:
   - React
 links:
+  docs: https://github.com/Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend/blob/main/README.md
   github: https://github.com/Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend
 maintainers:
   - LRZ (QCT)
