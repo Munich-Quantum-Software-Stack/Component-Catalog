@@ -11,4 +11,5 @@ maintainers:
   - LRZ (QCT)
 ---
 
-Web dashboard to view available backends, generate a personal access token, and display detailed job results. Also provides access to telemetry data.
+Web dashboard to view available backends, generate a personal access token, and display detailed job
+results. Also provides access to telemetry data.
