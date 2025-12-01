@@ -5,10 +5,9 @@ languages:
 frameworks:
   - React
 links:
-  docs:
   github: https://github.com/Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend
 maintainers:
   - LRZ (QCT)
 ---
 
-Web bashboard to view available back-ends, generate personal toket, display run jobs with details. Provide also access to telemetry data.
+Web dashboard to view available backends, generate a personal access token, and display detailed job results. Also provides access to telemetry data.
