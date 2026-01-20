@@ -4,7 +4,7 @@
   "Munich-Quantum-Software-Stack/MQSS-Pennylane-Adapter": 1,
   "Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite": 8,
   "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 6,
-  "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 0,
+  "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
   "munich-quantum-toolkit/bench": 109,
   "munich-quantum-toolkit/core": 107,
   "munich-quantum-toolkit/ddsim": 156,
