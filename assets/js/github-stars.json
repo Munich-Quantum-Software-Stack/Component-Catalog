@@ -6,13 +6,13 @@
   "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 6,
   "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
   "munich-quantum-toolkit/bench": 109,
-  "munich-quantum-toolkit/core": 107,
+  "munich-quantum-toolkit/core": 109,
   "munich-quantum-toolkit/ddsim": 156,
   "munich-quantum-toolkit/debugger": 20,
   "munich-quantum-toolkit/naviz": 14,
   "munich-quantum-toolkit/predictor": 83,
   "munich-quantum-toolkit/problemsolver": 53,
   "munich-quantum-toolkit/qcec": 106,
-  "munich-quantum-toolkit/qecc": 191,
+  "munich-quantum-toolkit/qecc": 192,
   "munich-quantum-toolkit/qmap": 131
 }
