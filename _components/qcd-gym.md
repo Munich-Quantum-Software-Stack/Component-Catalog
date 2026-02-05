@@ -13,4 +13,5 @@ maintainers:
   - Philipp Altmann
 ---
 
-Quantum Circuit Designer: A gymnasium-based set of environments for benchmarking reinforcement learning for quantum circuit design.
+Quantum Circuit Designer: A gymnasium-based set of environments for benchmarking reinforcement
+learning for quantum circuit design.
