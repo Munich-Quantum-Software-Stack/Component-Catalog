@@ -1,11 +1,12 @@
 {
+  "JFLXB/cuaoa": 20,
   "Munich-Quantum-Software-Stack/MQSS-CUDAQ-Adapter": 3,
   "Munich-Quantum-Software-Stack/MQSS-Passes-Suite": 4,
   "Munich-Quantum-Software-Stack/MQSS-Pennylane-Adapter": 1,
   "Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite": 8,
   "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 6,
   "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
-  "munich-quantum-toolkit/bench": 109,
+  "munich-quantum-toolkit/bench": 110,
   "munich-quantum-toolkit/core": 109,
   "munich-quantum-toolkit/ddsim": 157,
   "munich-quantum-toolkit/debugger": 20,
