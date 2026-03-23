@@ -11,10 +11,10 @@
   "munich-quantum-toolkit/ddsim": 158,
   "munich-quantum-toolkit/debugger": 20,
   "munich-quantum-toolkit/naviz": 15,
-  "munich-quantum-toolkit/predictor": 84,
+  "munich-quantum-toolkit/predictor": 85,
   "munich-quantum-toolkit/problemsolver": 53,
   "munich-quantum-toolkit/qcec": 109,
-  "munich-quantum-toolkit/qecc": 197,
+  "munich-quantum-toolkit/qecc": 199,
   "munich-quantum-toolkit/qmap": 131,
-  "philippaltmann/qcd": 11
+  "philippaltmann/qcd": 12
 }
