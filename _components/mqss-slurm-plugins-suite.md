@@ -11,4 +11,5 @@ maintainers:
   - LRZ (QCT)
 ---
 
-The SLURM plugins and scripts for managing quantum resources (QPU) within the SLURM workload manager, treating QPUs as generic accelerators.
+The SLURM plugins and scripts for managing quantum resources (QPU) within the SLURM workload
+manager, treating QPUs as generic accelerators.
