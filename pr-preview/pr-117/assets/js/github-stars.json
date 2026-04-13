@@ -1,0 +1,21 @@
+{
+  "JFLXB/cuaoa": 23,
+  "Munich-Quantum-Software-Stack/MQSS-CUDAQ-Adapter": 3,
+  "Munich-Quantum-Software-Stack/MQSS-Passes-Suite": 4,
+  "Munich-Quantum-Software-Stack/MQSS-Pennylane-Adapter": 1,
+  "Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite": 8,
+  "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 7,
+  "Munich-Quantum-Software-Stack/MQSS-SLURM-Plugins-Suite": 1,
+  "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
+  "munich-quantum-toolkit/bench": 113,
+  "munich-quantum-toolkit/core": 115,
+  "munich-quantum-toolkit/ddsim": 158,
+  "munich-quantum-toolkit/debugger": 20,
+  "munich-quantum-toolkit/naviz": 15,
+  "munich-quantum-toolkit/predictor": 85,
+  "munich-quantum-toolkit/problemsolver": 53,
+  "munich-quantum-toolkit/qcec": 109,
+  "munich-quantum-toolkit/qecc": 202,
+  "munich-quantum-toolkit/qmap": 131,
+  "philippaltmann/qcd": 12
+}
