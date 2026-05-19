@@ -9,4 +9,5 @@ maintainers:
   - LRZ
 ---
 
-The **MQSS Client** is a unifying, context-aware access layer and programming library that separates programming interfaces from the underlying compiler and runtime stacks.
+The **MQSS Client** is a unifying, context-aware access layer and programming library that separates
+programming interfaces from the underlying compiler and runtime stacks.
