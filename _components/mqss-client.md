@@ -1,6 +1,6 @@
 ---
 title: MQSS Client
-frameworks:
+languages:
   - C++
 links:
   docs: https://munich-quantum-software-stack.github.io/MQSS-Client/
