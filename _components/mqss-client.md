@@ -13,5 +13,5 @@ maintainers:
   - LRZ
 ---
 
-A unifying, context-aware access layer and programming library that separates
-programming interfaces from the underlying compiler and runtime stacks.
+A unifying, context-aware access layer and programming library that separates programming interfaces
+from the underlying compiler and runtime stacks.
