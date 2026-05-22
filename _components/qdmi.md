@@ -12,4 +12,6 @@ maintainers:
   - TUM(CDA)
 ---
 
-QDMI enables the submission to and the control of gate-based quantum systems and enables software tools to automatically retrieve and adapt to changing physical characteristics and constraints of different platforms.
+QDMI enables the submission to and the control of gate-based quantum systems and enables software
+tools to automatically retrieve and adapt to changing physical characteristics and constraints of
+different platforms.
