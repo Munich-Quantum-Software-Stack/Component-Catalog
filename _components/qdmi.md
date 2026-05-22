@@ -9,7 +9,7 @@ links:
 maintainers:
   - LRZ (QCT)
   - TUM (CAPS)
-  - TUM(CDA)
+  - TUM (CDA)
 ---
 
 QDMI enables the submission to and the control of gate-based quantum systems and enables software
