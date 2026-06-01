@@ -8,7 +8,7 @@
   "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 7,
   "Munich-Quantum-Software-Stack/MQSS-SLURM-Plugins-Suite": 1,
   "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
-  "munich-quantum-toolkit/bench": 118,
+  "munich-quantum-toolkit/bench": 119,
   "munich-quantum-toolkit/core": 123,
   "munich-quantum-toolkit/ddsim": 160,
   "munich-quantum-toolkit/debugger": 20,
@@ -16,7 +16,7 @@
   "munich-quantum-toolkit/predictor": 86,
   "munich-quantum-toolkit/problemsolver": 54,
   "munich-quantum-toolkit/qcec": 111,
-  "munich-quantum-toolkit/qecc": 210,
+  "munich-quantum-toolkit/qecc": 211,
   "munich-quantum-toolkit/qmap": 138,
   "philippaltmann/qcd": 12,
   "Munich-Quantum-Software-Stack/QDMI": 69
