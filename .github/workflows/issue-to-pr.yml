@@ -26,103 +26,99 @@ jobs:
           template-path: .github/ISSUE_TEMPLATE/new-component-request.yml # optional but recommended
 
       - name: "Create Branch, Commit, and Push"
+        env:
+          NAME: ${{ steps.issue-parser.outputs.issueparser_name }}
+          MAINTAINERS: ${{ steps.issue-parser.outputs.issueparser_maintainers }}
+          DOCS: ${{ steps.issue-parser.outputs.issueparser_docs }}
+          RELEASES: ${{ steps.issue-parser.outputs.issueparser_releases }}
+          GITHUB_REPO: ${{ steps.issue-parser.outputs.issueparser_github }}
+          DESCRIPTION: ${{ steps.issue-parser.outputs.issueparser_description }}
+          LANGUAGES: ${{ steps.issue-parser.outputs.issueparser_languages }}
+          FRAMEWORKS: ${{ steps.issue-parser.outputs.issueparser_frameworks }}
+          AUTHOR_NAME: ${{ github.event.issue.user.login }}
+          AUTHOR_ID: ${{ github.event.issue.user.id }}
         run: |
-          NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
-          MAINTAINERS="${{ steps.issue-parser.outputs.issueparser_maintainers }}"
-          DOCS="${{ steps.issue-parser.outputs.issueparser_docs }}"
-          RELEASES="${{ steps.issue-parser.outputs.issueparser_releases }}"
-          GITHUB_REPO="${{ steps.issue-parser.outputs.issueparser_github }}"
-          DESCRIPTION="${{ steps.issue-parser.outputs.issueparser_description }}"
-          LANGUAGES="${{ steps.issue-parser.outputs.issueparser_languages }}"
-          FRAMEWORKS="${{ steps.issue-parser.outputs.issueparser_frameworks }}"
           ISSUE_NUMBER="${{ github.event.issue.number }}"
-          SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
+          SANITIZED_NAME=$(printf '%s\n' "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
           BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
-
-          # Build lists for languages/frameworks/maintainers as YAML block lists
-          # We'll emit these into the component file below (as:
-          # languages:
-          #   - "python"
-          #   - "c++"
-          # ) to prefer enumeration syntax over inline arrays.
-
-          AUTHOR_NAME="${{ github.event.issue.user.login }}"
-          AUTHOR_EMAIL="${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com"
+          AUTHOR_EMAIL="${AUTHOR_ID}+${AUTHOR_NAME}@users.noreply.github.com"
 
           # Configure Git
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Create branch, add file, commit, and push
-          git checkout -b $BRANCH_NAME
-          echo -e "---" > "_components/${SANITIZED_NAME}.md"
-          echo -e "title: ${NAME}" >> "_components/${SANITIZED_NAME}.md"
+          git checkout -b "$BRANCH_NAME"
+
+          COMPONENT_FILE="_components/${SANITIZED_NAME}.md"
+
+          printf -- "---\n" > "$COMPONENT_FILE"
+          printf "title: %s\n" "$NAME" >> "$COMPONENT_FILE"
 
           # Write languages as a YAML block list if provided
           if [ -n "$LANGUAGES" ]; then
-            echo "languages:" >> "_components/${SANITIZED_NAME}.md"
+            printf "languages:\n" >> "$COMPONENT_FILE"
             OLDIFS="$IFS"
             IFS=','
             for lang in $LANGUAGES; do
-              lang_trim=$(echo "$lang" | sed 's/^ *//; s/ *$//')
-              echo "  - ${lang_trim}" >> "_components/${SANITIZED_NAME}.md"
+              lang_trim=$(printf '%s\n' "$lang" | sed 's/^ *//; s/ *$//')
+              printf "  - %s\n" "$lang_trim" >> "$COMPONENT_FILE"
             done
             IFS="$OLDIFS"
           fi
 
           # Write frameworks as a YAML block list if provided
           if [ -n "$FRAMEWORKS" ]; then
-            echo "frameworks:" >> "_components/${SANITIZED_NAME}.md"
+            printf "frameworks:\n" >> "$COMPONENT_FILE"
             OLDIFS="$IFS"
             IFS=','
             for fw in $FRAMEWORKS; do
-              fw_trim=$(echo "$fw" | sed 's/^ *//; s/ *$//')
-              echo "  - ${fw_trim}" >> "_components/${SANITIZED_NAME}.md"
+              fw_trim=$(printf '%s\n' "$fw" | sed 's/^ *//; s/ *$//')
+              printf "  - %s\n" "$fw_trim" >> "$COMPONENT_FILE"
             done
             IFS="$OLDIFS"
           fi
 
           if [ -n "$DOCS" ] || [ -n "$GITHUB_REPO" ] || [ -n "$RELEASES" ]; then
-            echo -e "links:" >> "_components/${SANITIZED_NAME}.md"
+            printf "links:\n" >> "$COMPONENT_FILE"
             if [ -n "$DOCS" ]; then
-              echo -e "  docs: ${DOCS}" >> "_components/${SANITIZED_NAME}.md"
+              printf "  docs: %s\n" "$DOCS" >> "$COMPONENT_FILE"
             fi
             if [ -n "$GITHUB_REPO" ]; then
-              echo -e "  github: ${GITHUB_REPO}" >> "_components/${SANITIZED_NAME}.md"
+              printf "  github: %s\n" "$GITHUB_REPO" >> "$COMPONENT_FILE"
             fi
             if [ -n "$RELEASES" ]; then
-              echo -e "  releases: ${RELEASES}" >> "_components/${SANITIZED_NAME}.md"
+              printf "  releases: %s\n" "$RELEASES" >> "$COMPONENT_FILE"
             fi
           fi
 
           # Write maintainers as a YAML block list
           if [ -n "$MAINTAINERS" ]; then
-            echo "maintainers:" >> "_components/${SANITIZED_NAME}.md"
+            printf "maintainers:\n" >> "$COMPONENT_FILE"
             OLDIFS="$IFS"
             IFS=','
             for m in $MAINTAINERS; do
-              m_trim=$(echo "$m" | sed 's/^ *//; s/ *$//')
-              echo "  - ${m_trim}" >> "_components/${SANITIZED_NAME}.md"
+              m_trim=$(printf '%s\n' "$m" | sed 's/^ *//; s/ *$//')
+              printf "  - %s\n" "$m_trim" >> "$COMPONENT_FILE"
             done
             IFS="$OLDIFS"
           fi
 
-          echo -e "---" >> "_components/${SANITIZED_NAME}.md"
-          echo -e "" >> "_components/${SANITIZED_NAME}.md"
-          echo -e "${DESCRIPTION}" >> "_components/${SANITIZED_NAME}.md"
+          printf -- "---\n\n" >> "$COMPONENT_FILE"
+          printf "%s\n" "$DESCRIPTION" >> "$COMPONENT_FILE"
 
-          git add "_components/${SANITIZED_NAME}.md"
+          git add "$COMPONENT_FILE"
 
           git -c "author.name=${AUTHOR_NAME}" -c "author.email=${AUTHOR_EMAIL}" \
             commit -m "feat: :card_file_box: add component \"${NAME}\" from Issue #${ISSUE_NUMBER}"
-          git push origin $BRANCH_NAME
+          git push origin "$BRANCH_NAME"
 
       - name: "Create Pull Request"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NAME: ${{ steps.issue-parser.outputs.issueparser_name }}
         run: |
-          NAME="${{ steps.issue-parser.outputs.issueparser_name }}"
-          SANITIZED_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
+          SANITIZED_NAME=$(printf '%s\n' "$NAME" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ \/]\+/-/g' -e 's/[^a-z0-9-]\+//g')
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           BRANCH_NAME="new/component-${ISSUE_NUMBER}-${SANITIZED_NAME}"
 
@@ -141,4 +137,4 @@ jobs:
             --title ":card_file_box: Add component \"${NAME}\" from Issue #${ISSUE_NUMBER}" \
             --body "${PR_BODY}" \
             --base develop \
-            --head $BRANCH_NAME
+            --head "$BRANCH_NAME"
