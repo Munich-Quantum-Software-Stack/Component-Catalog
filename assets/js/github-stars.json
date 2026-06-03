@@ -19,5 +19,6 @@
   "munich-quantum-toolkit/qecc": 211,
   "munich-quantum-toolkit/qmap": 138,
   "philippaltmann/qcd": 12,
-  "Munich-Quantum-Software-Stack/QDMI": 69
+  "Munich-Quantum-Software-Stack/QDMI": 69,
+  "nicomeyer96/variational-lse-solver": 10
 }
