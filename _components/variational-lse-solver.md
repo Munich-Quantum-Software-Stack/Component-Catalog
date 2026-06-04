@@ -13,6 +13,4 @@ maintainers:
 ---
 
 The variational-lse-solver is a PennyLane-based library for prototyping variational quantum
-algorithms that solve linear systems of equations on NISQ devices and in simulation. It unifies and
-extends several VQLS methods from the literature, offering configurable cost functions, flexible
-matrix-encoding modes, dynamic ansätze, and evaluation strategies with reduced circuit overhead.
+algorithms that solve linear systems of equations on NISQ devices and in simulation.
