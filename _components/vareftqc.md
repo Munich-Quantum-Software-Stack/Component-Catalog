@@ -13,4 +13,4 @@ maintainers:
 ---
 
 The VarEFTQC library implements a variational co-design pipeline that jointly learns noise-tailored
-quantum error-correcting encodings and physical realizations of logical gate sets 
+quantum error-correcting encodings and physical realizations of logical gate sets
