@@ -3,3 +3,4 @@ wille = "wille"
 
 [default.extend-identifiers]
 FoMaC = "FoMaC"
+CPY001 = "CPY001"
