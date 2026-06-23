@@ -11,5 +11,5 @@ maintainers:
   - MQV
 ---
 
-A general-purpose and platform-agnostic framework designed to serve as the central orchestration and integration layer for the
-quantum benchmarking ecosystem.
+A general-purpose and platform-agnostic framework designed to serve as the central orchestration and
+integration layer for the quantum benchmarking ecosystem.
