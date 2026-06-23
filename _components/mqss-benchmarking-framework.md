@@ -11,10 +11,5 @@ maintainers:
   - MQV
 ---
 
-The MQSS Benchmarking Framework is a general-purpose, platform-agnostic, extensible quantum
-benchmarking framework designed to serve as the central orchestration and integration layer for the
+A general-purpose and platform-agnostic framework designed to serve as the central orchestration and integration layer for the
 quantum benchmarking ecosystem.
-
-It provides a unified infrastructure that brings together benchmarks, hardware backends, simulators,
-circuit providers, benchmark suites, and benchmarking frameworks under a single, consistent
-environment, covering the full spectrum of benchmarking experiments.
