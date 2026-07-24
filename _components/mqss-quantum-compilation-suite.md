@@ -6,8 +6,9 @@ languages:
 frameworks:
   - LLVM
   - MLIR
-  - Nvidia Cudaq-quantum
-  - Pennylane-Catalyst
+  - CUDA-Q
+  - PennyLane
+  - Catalyst
 links:
   docs: https://munich-quantum-software-stack.github.io/MQSS-Quantum-Compilation-Suite/
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Quantum-Compilation-Suite
