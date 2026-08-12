@@ -64,7 +64,7 @@ repos:
 
   # Check for spelling
   - repo: https://github.com/crate-ci/typos
-    rev: v1.49.0
+    rev: v1
     hooks:
       - id: typos
 
@@ -91,7 +91,7 @@ repos:
 
   # Check JSON schemata
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.37.4
+    rev: 0.38.0
     hooks:
       - id: check-dependabot
       - id: check-github-workflows
