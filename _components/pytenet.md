@@ -10,9 +10,6 @@ maintainers:
   - TUM-QC
 ---
 
-**PyTeNet** is a didactic Python implementation of quantum tensor network operations and simulations
-within the matrix product state framework.
-
-Features include matrix product state and operator classes, constructing common Hamiltonians as
-MPOs, converting arbitrary operator chains to MPOs, TDVP time evolution, DMRG algorithm, and
-built-in support for additive quantum numbers.
+A didactic Python implementation of quantum tensor network operations and simulations within 
+the matrix product state framework. It features conversion of arbitrary operator chains to 
+MPOs, the DMRG algorithm, and TDVP time evolution.
