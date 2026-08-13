@@ -11,11 +11,7 @@ maintainers:
   - TUM-QC
 ---
 
-**ChemTensor** is a implementation of tensor network algorithms tailored for chemical systems. It is
-written in C, offering a Python 3 interface for more straightforward accessibility.
-
-Features include representation of common Hamiltonians as MPOs (including molecular Hamiltonians),
-tree tensor network topologies, general MPO and TTNO construction with optimized bond dimensions
-from a list of operator chains, U(1) and SU(2) symmetries, single- and two-site DMRG algorithm,
-tensor hypercontraction form of molecular Hamiltonians, Basis-Update and Galerkin (BUG)
-rank-adaptive time integration.
+An implementation of tensor network algorithms tailored for chemical systems, 
+written in C and offering a Python interface. It features chain and tree topologies, 
+general MPO and TTNO construction with optimized bond dimensions, abelian and non-abelian 
+symmetries, the tensor hypercontraction form of molecular Hamiltonians, and the DMRG and BUG algorithms.
