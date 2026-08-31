@@ -21,6 +21,7 @@
   "munich-quantum-toolkit/qcec": 117,
   "munich-quantum-toolkit/qecc": 233,
   "munich-quantum-toolkit/qmap": 141,
+  "cmendl/pytene": null,
   "philippaltmann/qcd": 13,
   "Munich-Quantum-Software-Stack/QDMI": 79,
   "nicomeyer96/qiskit-torch-module": 10,
