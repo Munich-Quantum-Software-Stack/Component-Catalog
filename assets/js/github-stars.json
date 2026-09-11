@@ -27,6 +27,6 @@
   "Munich-Quantum-Software-Stack/QDMI": 80,
   "nicomeyer96/qiskit-torch-module": 10,
   "nicomeyer96/qrl-benchmark": 7,
-  "nicomeyer96/vareftqc": 1,
+  "nicomeyer96/vareftqc": 2,
   "nicomeyer96/variational-lse-solver": 10
 }
