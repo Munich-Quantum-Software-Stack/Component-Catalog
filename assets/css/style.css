@@ -1,6 +1,7 @@
 /* Add these new and updated styles to /assets/css/style.css */
 
 :root {
+  --mqv-black: #000;
   --mqv-blue: #1a8ab9;
   --mqv-blue-light: #e6f4f9;
   --mqv-blue-dark: #136a92;
@@ -15,7 +16,7 @@ body {
 
 /* --- Header --- */
 .site-header {
-  background: linear-gradient(135deg, var(--mqv-blue) 0%, var(--mqv-blue-dark) 100%);
+  background: linear-gradient(135deg, var(--mqv-black) 0%, var(--mqv-black) 100%);
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   margin-left: -2rem;
@@ -37,6 +38,10 @@ body {
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
+}
+
+.mqv-logo {
+  filter: none;
 }
 
 .site-title {
