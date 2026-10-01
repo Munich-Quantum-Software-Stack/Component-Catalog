@@ -16,4 +16,7 @@ maintainers:
   - LRZ(QIS) and MQV(QSI)
 ---
 
-Quantum Resource Manager and Compiler Infrastructure (QRM&CI) is a core component of the Munich Quantum Software Stack (MQSS). It connects classical High-Performance Computing (HPC) systems with Quantum Computing (QC) resources, and provides the runtime machinery that moves work between the two.
+Quantum Resource Manager and Compiler Infrastructure (QRM&CI) is a core component of the Munich
+Quantum Software Stack (MQSS). It connects classical High-Performance Computing (HPC) systems with
+Quantum Computing (QC) resources, and provides the runtime machinery that moves work between the
+two.
