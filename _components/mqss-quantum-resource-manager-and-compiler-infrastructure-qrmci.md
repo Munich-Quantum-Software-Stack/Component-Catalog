@@ -16,4 +16,5 @@ maintainers:
   - LRZ(QIS) and MQV(QSI)
 ---
 
-MQSS QRM&CI combines compilation, optimization, scheduling, and device submission into a single pipeline.
+MQSS QRM&CI combines compilation, optimization, scheduling, and device submission into a single
+pipeline.
