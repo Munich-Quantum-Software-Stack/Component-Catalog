@@ -10,6 +10,7 @@
   "Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite": 8,
   "Munich-Quantum-Software-Stack/MQSS-Qiskit-Adapter": 7,
   "Munich-Quantum-Software-Stack/MQSS-Quantum-Compilation-Suite": 6,
+  "Munich-Quantum-Software-Stack/QRM-and-CI": 3,
   "Munich-Quantum-Software-Stack/MQSS-SLURM-Plugins-Suite": 1,
   "Munich-Quantum-Software-Stack/MQP-Dashboard-Frontend": 1,
   "munich-quantum-toolkit/bench": 131,
