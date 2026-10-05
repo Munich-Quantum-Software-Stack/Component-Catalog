@@ -9,4 +9,7 @@ maintainers:
   - LRZ / MQV
 ---
 
-An integration framework for distributed quantum systems in HPC environments, enabling software components to communicate seamlessly across different deployment configurations. It decouples application logic from the underlying communication mechanism, supporting both distributed messaging and direct in-process communication.
+An integration framework for distributed quantum systems in HPC environments, enabling software
+components to communicate seamlessly across different deployment configurations. It decouples
+application logic from the underlying communication mechanism, supporting both distributed messaging
+and direct in-process communication.
