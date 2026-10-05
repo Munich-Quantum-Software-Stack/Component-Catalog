@@ -11,4 +11,3 @@ maintainers:
 
 A lightweight, dependency-free C++20 task scheduler that queues quantum tasks and dispatches them
 according to configurable and extendable policies.
-
