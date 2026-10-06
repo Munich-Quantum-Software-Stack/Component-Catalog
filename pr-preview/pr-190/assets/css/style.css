@@ -118,12 +118,14 @@ main {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 22px !important;
+  height: 22px !important;
+  display: block;
+  object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 
 .mqss-badge svg {
