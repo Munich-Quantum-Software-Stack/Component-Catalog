@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 123 136" preserveAspectRatio="xMidYMid meet" style="display:block">
-  <g>
-    <polygon fill="#333333" points="53.64 133.23 35.58 131.18 35.48 113.38 53.8 115.17 53.64 133.23"/>
-    <polygon fill="#333333" points="122.66 79.97 0 79.97 0 65.29 122.77 65.29 122.66 79.97"/>
-    <polygon fill="#231f20" opacity="0.3" points="9.83 62.06 112.94 62.06 122.77 65.29 0 65.29 9.83 62.06"/>
-    <polygon fill="#231f20" opacity="0.4" points="63.4 85.31 76.42 86.26 53.8 115.17 35.48 113.38 63.4 85.31"/>
-    <polygon fill="#333333" points="26.6 19.61 13.2 19.08 12.52 .11 26.01 0 26.6 19.61"/>
-    <polygon fill="#231f20" opacity="0.4" points="100.49 2.97 100.1 16.08 26.6 19.61 26.02 .04 100.49 2.97"/>
-    <polygon fill="#333333" points="95.1 56.7 27.9 40.65 27.58 27.43 95.74 37.67 95.1 56.7"/>
-    <polygon fill="#231f20" opacity="0.3" points="95.74 37.67 27.58 27.43 39.21 26.96 109.78 36.57 95.74 37.67"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MQSS icon">
+  <g fill="none" fill-rule="evenodd">
+    <polygon fill="#333333" points="26,58 17,57 17,48 26,49 26,58"/>
+    <polygon fill="#333333" points="58,36 0,36 0,27 58,27 58,36"/>
+    <polygon fill="#231F20" opacity="0.35" points="4,25 55,25 58,27 0,27 4,25"/>
+    <polygon fill="#231F20" opacity="0.45" points="29,41 35,41 25,50 17,48 29,41"/>
+    <polygon fill="#333333" points="12,10 6,10 6,1 12,0 12,10"/>
+    <polygon fill="#231F20" opacity="0.45" points="46,1 46,8 12,10 12,0 46,1"/>
+    <polygon fill="#333333" points="44,25 13,18 13,12 45,17 44,25"/>
+    <polygon fill="#231F20" opacity="0.35" points="45,17 13,12 18,12 52,16 45,17"/>
   </g>
 </svg>
