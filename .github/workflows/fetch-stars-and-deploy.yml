@@ -36,7 +36,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Override baseurl for PR Previews
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        if:
+          github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name ==
+          github.repository
         run: |
           echo "baseurl: '/Component-Catalog/pr-preview/pr-${{ github.event.number }}'" >> _config.yml
       - name: Build with Jekyll
