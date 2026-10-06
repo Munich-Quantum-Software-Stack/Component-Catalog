@@ -11,6 +11,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/qecc
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A collection of tools for decoding and synthesizing fault-tolerant quantum circuits.

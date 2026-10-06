@@ -7,6 +7,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQP-Database-Access
 maintainers:
   - LRZ (QCT)
+mqss: 1
 ---
 
 MQP-Database-Access is the Python database access package for the Munich Quantum Portal (MQP)

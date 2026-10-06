@@ -10,6 +10,7 @@ links:
   github: https://github.com/nicomeyer96/qrl-benchmark
 maintainers:
   - Fraunhofer IIS (Quantum Compilation Group)
+mqss: 0
 ---
 
 A benchmarking suite for the sample complexity of quantum reinforcement learning (QRL).

@@ -10,6 +10,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/bench
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 1
 ---
 
 A circuit benchmark suite offering the same algorithms across abstraction levels to evaluate quantum

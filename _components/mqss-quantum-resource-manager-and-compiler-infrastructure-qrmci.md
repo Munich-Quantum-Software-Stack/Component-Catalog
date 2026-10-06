@@ -14,6 +14,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/QRM-and-CI
 maintainers:
   - LRZ(QIS) and MQV(QSI)
+mqss: 1
 ---
 
 MQSS QRM&CI combines compilation, optimization, scheduling, and device submission into a single

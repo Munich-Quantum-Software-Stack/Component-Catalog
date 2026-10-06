@@ -11,6 +11,7 @@ links:
 maintainers:
   - LMU (QAR-Lab)
   - Philipp Altmann
+mqss: 0
 ---
 
 Quantum Circuit Designer: A gymnasium-based set of environments for benchmarking reinforcement

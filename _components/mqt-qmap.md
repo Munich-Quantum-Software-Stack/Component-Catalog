@@ -11,6 +11,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/qmap
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A tool for quantum circuit compilation for various qubit technologies.

@@ -7,6 +7,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Integration-Deployment-Framework
 maintainers:
   - LRZ / MQV
+mqss: 1
 ---
 
 An integration framework for distributed quantum systems in HPC environments, enabling software
