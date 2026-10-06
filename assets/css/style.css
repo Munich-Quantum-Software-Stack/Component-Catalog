@@ -114,10 +114,14 @@ main {
   padding: 20px;
 }
 
+.component-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .mqss-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   width: 22px !important;
   height: 22px !important;
   max-width: 22px !important;
@@ -142,7 +146,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 44px 15px 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 0 15px 0;
   gap: 5px;
 }
 
