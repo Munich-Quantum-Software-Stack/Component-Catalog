@@ -10,6 +10,7 @@ links:
   github: https://github.com/nicomeyer96/vareftqc
 maintainers:
   - Fraunhofer IIS (Quantum Compilation Group)
+mqss: 0
 ---
 
 The VarEFTQC library implements a variational co-design pipeline that jointly learns noise-tailored

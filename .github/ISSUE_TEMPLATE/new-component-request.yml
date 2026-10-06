@@ -84,3 +84,12 @@ body:
       placeholder: "Description... (Use Markdown syntax and `##` for subsections if needed)"
     validations:
       required: true
+
+  - type: checkbox
+    id: mqss
+    attributes:
+      label: "MQSS integrated component"
+      description:
+        "Check this if the component is part of the Munich Quantum Software Stack and should display
+        the MQSS badge."
+      default: false

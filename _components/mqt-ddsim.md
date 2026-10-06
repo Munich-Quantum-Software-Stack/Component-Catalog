@@ -11,6 +11,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/ddsim
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A classical quantum circuit simulator based on decision diagrams.

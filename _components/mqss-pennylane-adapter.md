@@ -9,6 +9,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Pennylane-Adapter
 maintainers:
   - LRZ (QCT)
+mqss: 1
 ---
 
 Implementation of a custom PennyLane backend which enables users to send quantum jobs to LRZ's

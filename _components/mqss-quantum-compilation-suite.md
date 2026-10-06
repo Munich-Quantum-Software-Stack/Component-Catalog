@@ -14,6 +14,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Quantum-Compilation-Suite
 maintainers:
   - LRZ(QIS) / MQV(QSI)
+mqss: 1
 ---
 
 A collection of MLIR Dialect-Agnostic compiler optimization passes.

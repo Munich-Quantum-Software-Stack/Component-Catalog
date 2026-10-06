@@ -102,6 +102,7 @@ main {
 }
 
 .component-box {
+  position: relative;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -113,12 +114,38 @@ main {
   padding: 20px;
 }
 
-/* --- Header --- */
+.component-header-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mqss-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  display: block;
+  flex: none;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
 .component-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 15px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 32px 15px 0;
   gap: 5px;
 }
 
@@ -126,6 +153,7 @@ main {
   margin: 0;
   font-size: 1.25rem;
   color: var(--mqv-blue-dark);
+  max-width: 100%;
 }
 
 .component-links {
@@ -181,9 +209,6 @@ main {
   font-size: 0.9rem;
   color: #888;
   font-style: italic;
-}
-
-.component-tags {
 }
 
 .tag {

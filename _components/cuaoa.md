@@ -10,6 +10,7 @@ links:
   github: https://github.com/JFLXB/cuaoa
 maintainers:
   - LMU (QAR-Lab)
+mqss: 0
 ---
 
 CUAOA is a GPU accelerated QAOA simulation framework utilizing the NVIDIA CUDA toolkit. This

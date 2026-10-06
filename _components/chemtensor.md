@@ -8,7 +8,8 @@ links:
   github: https://github.com/qc-tum/chemtensor
   releases: https://pypi.org/project/chemtensor/
 maintainers:
-  - TUM-QC
+  - TUM (QC)
+mqss: 0
 ---
 
 An implementation of tensor network algorithms tailored for chemical systems, written in C and

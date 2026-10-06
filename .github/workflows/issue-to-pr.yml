@@ -35,6 +35,7 @@ jobs:
           DESCRIPTION: ${{ steps.issue-parser.outputs.issueparser_description }}
           LANGUAGES: ${{ steps.issue-parser.outputs.issueparser_languages }}
           FRAMEWORKS: ${{ steps.issue-parser.outputs.issueparser_frameworks }}
+          MQSS: ${{ steps.issue-parser.outputs.issueparser_mqss }}
           AUTHOR_NAME: ${{ github.event.issue.user.login }}
           AUTHOR_ID: ${{ github.event.issue.user.id }}
         run: |
@@ -102,6 +103,12 @@ jobs:
               printf "  - %s\n" "$m_trim" >> "$COMPONENT_FILE"
             done
             IFS="$OLDIFS"
+          fi
+
+          if [ "$MQSS" = "true" ] || [ "$MQSS" = "True" ] || [ "$MQSS" = "1" ]; then
+            printf "mqss: 1\n" >> "$COMPONENT_FILE"
+          else
+            printf "mqss: 0\n" >> "$COMPONENT_FILE"
           fi
 
           printf -- "---\n\n" >> "$COMPONENT_FILE"
