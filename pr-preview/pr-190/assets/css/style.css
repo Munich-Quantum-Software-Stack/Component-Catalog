@@ -120,7 +120,10 @@ main {
   right: 12px;
   width: 22px !important;
   height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
   display: block;
+  flex: none;
   object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
   background: transparent;
