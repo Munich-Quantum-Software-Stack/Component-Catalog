@@ -13,7 +13,7 @@ links:
   docs: https://munich-quantum-software-stack.github.io/QRM-and-CI/
   github: https://github.com/Munich-Quantum-Software-Stack/QRM-and-CI
 maintainers:
-  - LRZ(QIS) and MQV(QSI)
+  - LRZ (QCT) / MQV (QSI)
 mqss: 1
 ---
 
