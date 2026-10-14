@@ -8,7 +8,10 @@ links:
   docs: https://munich-quantum-software-stack.github.io/QDMI/
   github: https://github.com/Munich-Quantum-Software-Stack/QDMI
 maintainers:
-  - TUM (CDA) / MQSC / LRZ (QCT) / TUM (CAPS)
+  - TUM (CDA)
+  - MQSC
+  - LRZ (QCT)
+  - TUM (CAPS)
 mqss: 1
 ---
 
