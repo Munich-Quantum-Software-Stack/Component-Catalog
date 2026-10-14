@@ -1,5 +1,5 @@
 {
-  "qc-tum/chemtensor": 9,
+  "qc-tum/chemtensor": 10,
   "JFLXB/cuaoa": 23,
   "Munich-Quantum-Software-Stack/MQSS-Benchmarking-Framework": 5,
   "Munich-Quantum-Software-Stack/MQSS-Clien": null,
@@ -22,9 +22,9 @@
   "munich-quantum-toolkit/naviz": 18,
   "munich-quantum-toolkit/predictor": 89,
   "munich-quantum-toolkit/problemsolver": 56,
-  "munich-quantum-toolkit/qcec": 119,
+  "munich-quantum-toolkit/qcec": 120,
   "munich-quantum-toolkit/qecc": 240,
-  "munich-quantum-toolkit/qmap": 145,
+  "munich-quantum-toolkit/qmap": 144,
   "cmendl/pytene": null,
   "philippaltmann/qcd": 13,
   "Munich-Quantum-Software-Stack/QDMI": 85,
