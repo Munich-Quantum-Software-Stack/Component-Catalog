@@ -10,6 +10,7 @@ links:
   releases: https://pypi.org/project/qiskit-torch-module/
 maintainers:
   - Fraunhofer IIS (Quantum Compilation Group)
+mqss: 0
 ---
 
 The qiskit-torch-module is a Qiskit-based simulation and training framework for variational quantum

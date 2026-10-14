@@ -10,7 +10,8 @@ links:
   docs: https://munich-quantum-software-stack.github.io/MQSS-Client/
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Client
 maintainers:
-  - LRZ
+  - LRZ (QCT) / MQV (QSI)
+mqss: 1
 ---
 
 A unifying, context-aware access layer and programming library that separates programming interfaces

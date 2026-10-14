@@ -12,6 +12,7 @@ links:
   releases: https://pypi.org/project/mqt-core
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 MQT Core forms the backbone of the software tools developed as part of the Munich Quantum Toolkit

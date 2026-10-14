@@ -7,6 +7,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQP-Dashboard-Backend
 maintainers:
   - LRZ (QCT)
+mqss: 1
 ---
 
 Dashboard Backend provides APIs to authentication and connect to Quantum Database, Proxy Database.

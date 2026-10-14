@@ -12,6 +12,7 @@ maintainers:
   - MQSC
   - LRZ (QCT)
   - TUM (CAPS)
+mqss: 1
 ---
 
 A standardized hardware-software interface that enables resource management of gate-based quantum

@@ -10,6 +10,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/problemsolver
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A framework for users with little to no quantum computing knowledge to solve common problems.

@@ -10,6 +10,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-QDMI-Devices-Suite
 maintainers:
   - LRZ (QCT)
+mqss: 1
 ---
 
 A collection of QDMI device implementations for various quantum devices or emulators.

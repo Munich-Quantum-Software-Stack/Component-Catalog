@@ -10,6 +10,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/naviz
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 An open-source Rust and Python library to visualize atom movements of neutral atom quantum

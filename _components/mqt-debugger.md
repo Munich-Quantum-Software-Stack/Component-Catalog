@@ -11,6 +11,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/debugger
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A semi-automated quantum program debugging tool.

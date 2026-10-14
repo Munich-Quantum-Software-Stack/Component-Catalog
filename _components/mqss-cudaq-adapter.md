@@ -10,6 +10,7 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-CUDAQ-Adapter
 maintainers:
   - LRZ (QCT)
+mqss: 1
 ---
 
 Implementation of an adapter for the CUDA-Q programming interface to the MQSS.

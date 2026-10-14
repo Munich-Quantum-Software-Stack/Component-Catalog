@@ -7,7 +7,8 @@ links:
   github: https://github.com/cmendl/pytenet
   releases: https://pypi.org/project/pytenet/
 maintainers:
-  - TUM-QC
+  - TUM (QC)
+mqss: 0
 ---
 
 A didactic Python implementation of quantum tensor network operations and simulations within the

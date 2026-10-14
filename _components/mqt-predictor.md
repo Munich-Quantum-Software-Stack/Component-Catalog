@@ -12,6 +12,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/predictor
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 0
 ---
 
 A tool for automatic device selection with device-specific circuit compilation for quantum computing

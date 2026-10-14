@@ -11,6 +11,7 @@ links:
   github: https://github.com/munich-quantum-toolkit/qcec
 maintainers:
   - TUM (CDA) / MQSC
+mqss: 1
 ---
 
 A tool for quantum circuit equivalence checking.

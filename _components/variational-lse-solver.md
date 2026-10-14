@@ -10,6 +10,7 @@ links:
   releases: https://pypi.org/project/variational-lse-solver/
 maintainers:
   - Fraunhofer IIS (Quantum Compilation Group)
+mqss: 0
 ---
 
 The variational-lse-solver is a PennyLane-based library for prototyping variational quantum

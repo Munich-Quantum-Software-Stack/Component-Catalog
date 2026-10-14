@@ -7,8 +7,8 @@ links:
   github: https://github.com/Munich-Quantum-Software-Stack/MQSS-Benchmarking-Framework
   releases: https://pypi.org/project/mqss-benchmarking-framework/1.0.0/
 maintainers:
-  - LRZ
-  - MQV
+  - LRZ (QCT) / MQV (QSI)
+mqss: 1
 ---
 
 A general-purpose and platform-agnostic framework designed to serve as the central orchestration and
