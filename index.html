@@ -72,7 +72,7 @@ title: Component Overview
         <div class="component-maintainers">
           <span class="maintainers">Maintained by</span>
           {% for maintainer in component.maintainers %}
-          <span class="maintainers">{{ maintainer }}</span>
+          <span class="maintainers">{{ maintainer }}{% unless forloop.last %},{% endunless %}</span>
           {% endfor %}
         </div>
         <div class="component-tags">
