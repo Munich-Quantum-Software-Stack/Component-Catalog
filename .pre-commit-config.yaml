@@ -42,7 +42,7 @@ repos:
 
   # Handling unwanted unicode characters
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.7.1
+    rev: 1.0.0
     hooks:
       - id: fix-ligatures
       - id: fix-smartquotes
@@ -64,7 +64,7 @@ repos:
 
   # Check for spelling
   - repo: https://github.com/crate-ci/typos
-    rev: typos-dict-v0.14.2
+    rev: v1.51.1
     hooks:
       - id: typos
 
@@ -91,7 +91,7 @@ repos:
 
   # Check JSON schemata
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.38.2
+    rev: 0.39.0
     hooks:
       - id: check-dependabot
       - id: check-github-workflows
