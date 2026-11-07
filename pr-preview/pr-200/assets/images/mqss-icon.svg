@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MQSS icon">
+  <g fill="none" fill-rule="evenodd">
+    <polygon fill="#333333" points="26,58 17,57 17,48 26,49 26,58"/>
+    <polygon fill="#333333" points="58,36 0,36 0,27 58,27 58,36"/>
+    <polygon fill="#231F20" opacity="0.35" points="4,25 55,25 58,27 0,27 4,25"/>
+    <polygon fill="#231F20" opacity="0.45" points="29,41 35,41 25,50 17,48 29,41"/>
+    <polygon fill="#333333" points="12,10 6,10 6,1 12,0 12,10"/>
+    <polygon fill="#231F20" opacity="0.45" points="46,1 46,8 12,10 12,0 46,1"/>
+    <polygon fill="#333333" points="44,25 13,18 13,12 45,17 44,25"/>
+    <polygon fill="#231F20" opacity="0.35" points="45,17 13,12 18,12 52,16 45,17"/>
+  </g>
+</svg>
